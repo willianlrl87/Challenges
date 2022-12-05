@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+
+:root{
+    --color-body-bg: #212121;
+    --color-btn-border-effect: #029ebe;
+    --color-btn-text: #6a556a;
+    --color-btn-border: #555555;
+    --color-btn-bg: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-body-bg);
+}
+
+button{
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--color-btn-text);
+    outline: none;
+    border: none;
+    border-top: 7px solid var(--color-btn-border-effect);
+    border-bottom: 7px solid var(--color-btn-border-effect);
+    position: relative;
+    background-color: var(--color-btn-bg);
+}
+
+button::after,
+button::before{
+    content:'';
+    position: absolute;
+    width: 30%;
+    height: calc(100%);
+    background-color: var(--color-btn-bg);
+    z-index: -1;
+    border-radius: 50%;
+    display: inline-block;
+    border-right: 6px solid var(--color-btn-border);
+    border-left: 6px solid var(--color-btn-border-effect);
+    border-bottom: 7px solid var(--color-btn-border-effect);
+    border-top: 7px solid var(--color-btn-border);
+    transition: all 0.5s;
+}
+
+button::after{
+    top: -7px;
+    right: -15px;
+    transform: rotate(45deg);
+}
+
+button::before{
+    top: -7px;
+    left: -16px;
+    transform: rotate(225deg);
+}
+
+button:hover:after{
+    transform: rotate(225deg);
+}
+
+button:hover:before{
+    transform: rotate(405deg);
+}

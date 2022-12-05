@@ -1,0 +1,121 @@
+:root{
+    --color-bg: #333333;
+    --color-bg-hover: #ff0057;
+    --color-bg-hidden-div: #ffffff;
+    --color-font-btn: #333333;
+    --color-font-img: #5b5c5c;
+    --color-font-hidden-div: #000000;
+}
+
+body{
+    margin: 0px;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-bg);
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90vw;
+}
+
+.card{
+    margin:25px;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;  
+    cursor: pointer;
+}
+
+.card-image{
+    height: 200px;
+    background-color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(100px);
+    width: 100%;
+    transition: all 0.3s linear;
+    z-index:2;
+}
+
+.card-image figcaption{
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 600;
+    opacity: .2;
+}
+
+.card-image img{
+    width: 100px;
+    height: 100px;
+    opacity: .2;
+}
+
+.card-info{
+    height: 200px;
+    background-color: var(--color-bg-hidden-div);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: left;
+    z-index: 1;
+    transform: translateY(-100px);
+    box-shadow: 0 10px 50px black;
+    transition: all 0.3s linear;
+}
+
+.card-info button{
+    margin-top: 20px;    
+}
+
+.card:hover .card-image{
+    transform: translateY(0px);
+    background-color: var(--color-bg-hover);
+}
+
+.card:hover .card-image img{
+    opacity:1;
+}
+
+.card:hover .card-image figcaption{
+    opacity:1;
+}
+
+.card:hover .card-info{
+    transform: translateY(0px);
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-font-btn);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+button{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--color-font-btn);
+    padding: 5px;
+}
+
+button:hover{
+    background-color: var(--color-bg);
+}
+
+button:hover a{
+    color: var(--color-bg-hidden-div);
+}

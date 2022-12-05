@@ -1,0 +1,100 @@
+:root{
+    --black: #111111;
+    --gray: #888888;
+    --font-color: #FFF;
+}
+
+
+body{
+    box-sizing: border-box;
+    margin: 0px;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--black);
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+
+.todo{
+    background-color: var(--gray);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    height: inherit;
+    margin: 30px 0;
+}
+
+.todoRegisteredTasks{
+    padding: 10px;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.task{
+    padding: 10px;
+    width: 40vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--black);
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.task *{
+    margin: 5px;
+}
+
+.task span{
+    padding: 5px 10px 5px 10px;
+}
+
+button.addTask{
+    padding: 10px 15px;
+}
+
+button{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type='text']{
+    width: 300px;
+    line-height: 23px;
+    text-decoration: none;
+    border-radius: 15px;
+    outline: none;  
+    border: none;
+    padding: 5px;
+    font-size: 1.2rem;
+    background-color: #CCC;
+}
+
+i{
+    pointer-events: none;
+}
+
+.task input{
+    width: 200px;
+}
+
+.task.ativo{
+    background-color: blue;
+    text-decoration: line-through underline overline;
+}
+
+.task span{
+    pointer-events: none;
+}
+
+button:hover{
+    background-color: #555;
+}

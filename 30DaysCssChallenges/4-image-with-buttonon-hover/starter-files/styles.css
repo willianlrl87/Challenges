@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600;);
+
+body{
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    background-color: #222;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 85vw;
+    overflow:hidden;
+}
+
+.links{
+    margin: 20px 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    height: 33vh;
+}
+
+.links img{
+    max-width: 320px;
+    height: inherit;
+}
+
+.links a{
+    background-color: black;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    border: 5px solid white;
+    position: absolute;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(.3);
+    color: white;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+
+.links:hover a{
+    z-index: 5;
+    transform: scale(1) translate(-50%, -50%);
+}   
+
+.links:before,
+.links:after{
+    content:'';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background-color: rgba(0,0,0,.92);
+    z-index:11;
+    transform: rotate(45deg);
+    transition: all 1s ease;
+}
+
+.links:before{
+    left: -80%;
+    top: 130%;
+}
+
+.links:after{
+    left: 20%;
+    top: -190%;
+}
+
+.links:hover:before{
+    top: 25%;
+}
+
+    
+.links:hover:after{
+    top: -85%;
+}
+
+.links:hover:before,
+.links:hover:after{
+    z-index: 2;
+}
