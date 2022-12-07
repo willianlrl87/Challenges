@@ -4,9 +4,82 @@
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
 </head>
-<body>
-<canvas id="draw" width="800" height="800"></canvas>
+<body style="overflow:hidden">
+<canvas id="draw" width="100vw" height="100vh"></canvas>
 <script>
+  const canvas = document.querySelector('#draw');
+  const context = canvas.getContext('2d');
+  let fillColor = color();
+  let counter = 0;
+
+  function color(counter){
+    let randomColor = 'blue';
+    switch(counter % 3){
+      case 0:
+        randomColor = '#9B54FF';
+      break;
+      case 1:
+        randomColor = '#4DBCF7';
+      break;
+      case 2: 
+        randomColor = '#41F86E';
+      break;
+    }
+    return randomColor;
+  }
+  setInterval(() =>{
+    counter++
+    fillColor = color(counter);
+    context.fillStyle = fillColor;
+    context.strokeStyle = fillColor;
+  },100);
+  
+
+  const mouse = {
+    active: false,
+    moving: false,
+    previousX: null,
+    previousY: null,
+    currentY: 0,
+    currentX: 0
+  }
+
+  canvas.width = window.innerWidth;
+  canvas.height= window.innerHeight;
+
+  
+  context.lineWidth = 10;
+
+
+  const drawLine = mouse => {
+    context.beginPath();
+    context.moveTo(mouse.previousX, mouse.previousY);
+    context.lineTo(mouse.currentX, mouse.currentY);
+    context.stroke();
+  }
+
+  canvas.onmousedown = event => mouse.active = true;
+  canvas.onmouseup = event => mouse.active = false;
+
+  canvas.onmousemove = event => {
+    mouse.currentX = event.clientX;
+    mouse.currentY = event.clientY;
+    mouse.moving = true;
+  };
+
+  const mouseInUse = () => {
+    if(mouse.active && mouse.moving && mouse.previousX){
+      drawLine(mouse);
+      mouse.moving = false;
+    }
+    mouse.previousX = mouse.currentX;
+    mouse.previousY = mouse.currentY;
+    setTimeout(mouseInUse);
+    
+  }
+
+   mouseInUse();
+
 </script>
 
 <style>
