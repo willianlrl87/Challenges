@@ -1,3 +1,97 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+:root{
+    --color-bg-body: #212121;
+    --color-bg-div: #333333;
+    --color-font-role: #7e7e65;
+    --color-font: #cdd29f;
+    --font-name: "Montserrat", Helvetica, sans-serif;
+    --font-role-about: "Open Sans", Helvetica, sans-serif;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body{
+    background-color: var(--color-bg-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    min-width: 300px;
+    
+}
+
+.card{
+    max-width: 26vw;
+    min-width: 280px;
+    margin-left: 20px;
+}
+
+.card-info{
+    background-color: var(--color-bg-div);
+    position: relative;
+    margin-bottom: 15px;
+    padding: 20px;
+    height: 160px;
+    border-radius: 5px;
+    padding-right: 50px;
+    letter-spacing: 1px;;
+}
+
+.card-info::after{
+    content:'';
+    position: absolute;
+    background-color: transparent;
+    bottom: -7px;
+    left: 40px;
+    border: 7px solid transparent;
+    border-left: 7px solid var(--color-bg-div);
+    border-bottom: 7px solid var(--color-bg-div);
+    transform: rotate(-45deg);
+}
+
+.card-info-name{
+    margin-bottom: 7px;
+    font-family: var(--font-name);
+    font-size: 1.1rem;
+} 
+
+.card-info-role{
+    color: var(--color-font-role);
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    margin-bottom: 7px;
+    font-family: var(--font-role-about);
+}
+
+.card-info-about{
+    margin-bottom: 7px;
+    font-family: var(--font-role-about);
+    font-size: .8rem;
+}
+
+.card-social{
+    display: flex;
+    align-items: center;
+}
+
+.card-social figure img{
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+a i{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+}
