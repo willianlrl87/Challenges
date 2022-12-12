@@ -5,9 +5,8 @@
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -63,6 +62,7 @@
 
   function sound(audio){
     const sound = document.querySelector(`audio[data-key="${audio }"`)
+    console.log('Sound played with audio tag and sound.play in Javascript()');
     sound.play();
   }
 
@@ -78,7 +78,5 @@
     });
   });
 </script>
-
-
 </body>
 </html>
