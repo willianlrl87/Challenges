@@ -26,7 +26,7 @@
 
   async function searchCity(city){
     const citiesArray = await cityApi();
-    const cities  SearchResult = await citiesArray.filter(cityArray  => {
+    const citiesSearchResult = await citiesArray.filter(cityArray  => {
       if(cityArray.city.toUpperCase().includes(city.toUpperCase()) || 
       cityArray.state.toUpperCase().includes(city.toUpperCase())){
           return true;
@@ -56,7 +56,6 @@
     }
 
     searchResult.then(resolve => {
-      console.log(resolve);
       resolve.forEach(city => {
         const li = createLi(city.city, city.state, city.population);
         suggestions.appendChild(li);  
