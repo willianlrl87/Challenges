@@ -96,6 +96,50 @@
   </div>
 
 <script>
+  const itemsNodeList = document.querySelectorAll('.item');
+  const items = Array.from(itemsNodeList);
+
+  function handleClick(item){
+    const itemElement = item.target.parentNode;
+    itemElement.classList.toggle('active');
+    
+    for(i = 0, previousItem = null, currentItem = null; i < items.length; i++){
+      if(itemElement == items[i]){
+        currentItem = i;
+      }
+      if(items[i].classList.contains('active') && items[i] != itemElement){
+        previousItem = i;
+      }
+    }
+  items.forEach(item => {
+    item.addEventListener('click', event => {
+      if(event.shiftKey == true){
+        selectItems(previousItem, currentItem);
+      }
+      
+    });
+  });
+  }
+  
+  function selectItems(previousItem, currentItem){
+    if(previousItem != null){
+      if(previousItem < currentItem){
+        for(i = previousItem; i <= currentItem; i++){
+          items[i].firstElementChild.checked = true;
+        }
+      }else{
+        for(i = currentItem; i <= previousItem; i++){
+          items[i].firstElementChild.checked = true;
+        }
+      } 
+    }
+  }
+
+  items.forEach(item => {
+    item.addEventListener("click", handleClick);
+  });
+
+
 </script>
 </body>
 </html>
