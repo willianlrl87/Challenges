@@ -1,2 +1,64 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:200);
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+:root{
+    --color-bg-body: #212121;
+}
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--color-bg-body);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: white;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    width: 315px;
+    border-radius: 5px;
+}
+
+.card .info{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    margin-top: -30px;
+    margin-left: 15px;
+}
+
+span{
+    font-size: 20px;
+}
+
+img{
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+    margin:0 15px;
+    margin-top: -25px;
+}
+
+i{
+    color: lightgray;
+    font-size: 25px;
+    margin-right: 5px;
+    transition: all .7s linear;
+    
+}
+
+i:hover{
+    color: darkcyan;
+    
+}
